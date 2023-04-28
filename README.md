@@ -21,6 +21,7 @@ Below are the complete hardware and software instructions to build your own OURp
 - 1 watt onboard audio speaker
 - 3 USB ports
 - "Convergent": HDMI port to plug in external monitor, USB to plug in keyboard and mouse
+- Screen lock switch
 
 
 ## GUIDING PRINCIPLES
@@ -48,9 +49,9 @@ Below are the complete hardware and software instructions to build your own OURp
 
 ## HOW TO BUILD
 
-Buy all the parts in parts list.xls.
+Buy all the parts in parts-list.xls.
 
-You can snap together a working version quite quickly with just the following:
+You can snap together a working version quite quickly with just the following (no soldering required):
 - Raspberry Pi
 - 4G HAT + GSM and GPS antennas
 - Raspberry Pi power supply
@@ -72,5 +73,21 @@ Follow the instructions listed in setup_commands.txt to ready the Raspberry Pi, 
 There are many USB and audio plugs being used in the project. These are too big to allow packaging the phone's components into the wooden phone cover (box) designed for it. To make these smaller, I used thin wire to make new cables, with custom plugs on the ends. I made the plugs by using radically stripped down versions of the male plugs, taking off extra plastic housing, grinding off unnecessary bits and even bending some parts at right angles. Then I soldered on new leads and covered it with hot glue so that they are robust enough to force into tight spaces.
 
 ### Making the Waveshare 4G HAT smaller
-This is a challenge because the 4G HAT sits in between the touch screen and the Raspberry Pi itself. It is a tight, tight squeeze. I used a combination of a Dremel tool (small rotary grinder) and miniature steel cutters to painstakingly cut off the large USB ports and the two thick metal pins. These proved useless for carrying USB data, so I couldn't use them anyway - only the micro USB port seemed to work (despite many messages to their Customer Support). Be EXTREMELY careful removing these big items because it is very easy to cause massive destruction by lifting a track off the PCB, and then your module (the most expensive part) is dead and unusable.
+This is a challenge because the 4G HAT sits in between the touch screen and the Raspberry Pi itself. It is a tight, tight squeeze. I used a combination of a Dremel tool (small rotary grinder) and miniature steel cutters to painstakingly cut off the large USB ports and the two thick metal pins. These proved useless for carrying USB data, so I couldn't use them anyway - only the micro USB port seemed to work (despite many messages to their Customer Support). Be EXTREMELY careful removing these big items because it is very easy to cause massive destruction by lifting a track off the PCB, and then your module (the most expensive part) is dead and unusable. 
+
+Once these items are removed and the whole device is now slim, I hot glued the GSM and GPS antenna plugs and wires in place so they are not so fragile, and wrapped the whole thing in insulation tape.
+
+The GSM antenna provided is too big. So I purchased a PCB GSM antenna and soldered that onto the cable instead. It works ok, but signal is never 100%, only good-ish.
+
+The GPS antenna is also too big. So I crushed it slowly in a clamp and used a screwdriver to prise off the plastic casing. This revealed a much smaller GSM antenna chip, like a hard metal square. I soldered this onto the cable instead and replaced the whole plug system with just one little neat cable.
+
+## Assembly and construction
+This is best described with pictures, but essentially:
+- Make new male plugs for the micro USB and male 3.5mm TRRS / stereo plugs.
+- Solder all the wires for the charger, power supply, power switch and screen lock switch, audio amp, volume control.
+- Charge the batteries up for the first time, with the power switch in OFF / charging mode.
+- Connect all the batteries, wires and plugs and test: internet, phone call, SMS, GPS, music playing.
+- Insert the 4G HAT between the touchscreen and Raspberry Pi
+- Fold the camera ribbon cable over the 4G HAT and over and under the batteries - stick in place with Prestick putty
+- 
 
