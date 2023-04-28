@@ -20,7 +20,7 @@ Below are the complete hardware and software instructions to build your own OURp
 - Bluetooth audio
 - 1 watt onboard audio speaker
 - 3 USB ports
-- HDMI port to plug in external monitor
+- "Convergent": HDMI port to plug in external monitor, USB to plug in keyboard and mouse
 
 
 ## GUIDING PRINCIPLES
@@ -37,6 +37,7 @@ Below are the complete hardware and software instructions to build your own OURp
 - Use a capacitative touch screen, not resistive touch
 - A bigger screen would be nice
 - Eliminate audio whining / cracking (I think this is an RPi 3 problem, or audio amp needs isolation)
+- Use shielded cables for audio carrying wires
 - Add a microphone / USB audio card to enable audio on video recordings
 - Connect phone call audio into Bluetooth (not just device audio)
 - Audio jack
@@ -47,7 +48,7 @@ Below are the complete hardware and software instructions to build your own OURp
 
 ## HOW TO BUILD
 
-Buy all the parts in parts list.xml.
+Buy all the parts in parts list.xls.
 
 You can snap together a working version quite quickly with just the following:
 - Raspberry Pi
@@ -56,6 +57,20 @@ You can snap together a working version quite quickly with just the following:
 - Waveshare touchscreen
 - Raspberry Pi camera (optional)
 - Headphones with built-in mic
+- Some USB cables
+
+Copy the files below into the Raspberry Pi home directory:
+- startup.sh (auto-start script to turn on internet)
+- phone.py (the app that allows calls, SMS, Contacts)
+- location-provider.py (presents stored GPS coordinates at a URL for web-based location providers)
+- ringtone.wav (your phone's ringtone - replace as you wish!)
+- mobile-keyboard.xml (a custom keyboard based on the match keyboard software)
 
 Follow the instructions listed in setup_commands.txt to ready the Raspberry Pi, setup internet, and get the phone.py app working.
+
+### Making the cables smaller
+There are many USB and audio plugs being used in the project. These are too big to allow packaging the phone's components into the wooden phone cover (box) designed for it. To make these smaller, I used thin wire to make new cables, with custom plugs on the ends. I made the plugs by using radically stripped down versions of the male plugs, taking off extra plastic housing, grinding off unnecessary bits and even bending some parts at right angles. Then I soldered on new leads and covered it with hot glue so that they are robust enough to force into tight spaces.
+
+### Making the Waveshare 4G HAT smaller
+This is a challenge because the 4G HAT sits in between the touch screen and the Raspberry Pi itself. It is a tight, tight squeeze. I used a combination of a Dremel tool (small rotary grinder) and miniature steel cutters to painstakingly cut off the large USB ports and the two thick metal pins. These proved useless for carrying USB data, so I couldn't use them anyway - only the micro USB port seemed to work (despite many messages to their Customer Support). Be EXTREMELY careful removing these big items because it is very easy to cause massive destruction by lifting a track off the PCB, and then your module (the most expensive part) is dead and unusable.
 
