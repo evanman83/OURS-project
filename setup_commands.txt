@@ -1,0 +1,294 @@
+#################### LINUX SETUP COMMANDS ############################
+
+# use Raspberry Pi Imager application to flash Raspberry Pi OS (32 bit)
+# put newly flashed SD card into Raspberry Pi and turn on
+# I did the install process with the touchscreen shield plugged in + a USB mouse + keyboard
+# during setup, connect to wifi and allow the software update to proceed
+# if the screen goes off during install, move the mouse (or it's rebooting)
+# do all of the below cammands on the Raspberry Pi, in terminal
+
+# see what OS is running - mine said "Raspian GNU/Linux 11 (bullseye)"
+cat /etc/os-release command
+
+# see what processor and model is running - my model was "Raspberry Pi 3 Model B Rev 1.2"
+cat /proc/cpuinfo
+
+
+# --------- get touchscreen working -----------------
+
+# This process was very roundabout. The documentation on the Waveshare page (https://www.waveshare.com/wiki/4inch_HDMI_LCD_(H)) was incorrect when I visited it. The touchscreen worked immediately out of the box, however the touch part didn't work. I followed the steps below:
+
+# clone the repo from Waveshare
+git clone https://github.com/waveshare/LCD-show.git
+
+# go into the newly created folder
+cd LCD-show
+
+# install the package relevant for your touchscreen model, mine was the 800x480 model
+sudo ./LCD4-800x480-show
+
+# the Pi should install then reboot, now in landscape mode
+
+# open up the boot/config.txt file
+sudo nano /boot/config.txt
+
+# scoll down and make sure the below is present
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+
+# insert this special line under the above - I don't know what this does
+hdmi_cvt=800 480 60 6 0 0 0
+
+# change 'swapxy' to 1 in the below line to get the portrait mode working for the stylus
+dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=1,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
+
+# comment out the below
+#display_rotate=3
+#hdmi_drive=1
+#hdmi_force_hotplug=1
+#max_usb_current=1
+
+# then exit and save
+
+#reboot the system to apply new settings
+sudo reboot
+
+# the screen should be portrait mode again
+# if you use the stylus you should see the touch screen responds to it now, but needs calibrating
+
+# under the main Pi menu, under Preferences, click on Calibrate Touchscreen
+# now touch the stylus on the four points, step by step
+# the screen will then show instructions, something about copying the config below into /etc/X11/xorg.conf.d/99-calibration.conf
+# right click then copy the config to clipboard
+# Ctrl+C to exit
+sudo nano /etc/X11/xorg.conf.d/99-calibration.conf
+
+# then paste in the copied calibration, exit and save
+# the stylus showuld now work perfectly!
+
+
+# --------- get internet working -----------------
+
+# make sure your SIM card in the HAT actually has airtime and data before you plug it in
+# I used these instructions as a guide: https://www.waveshare.com/wiki/Raspberry_Pi_networked_via_NDIS
+# but my full list of commands is below:
+
+# run the below command to list USB devices
+watch -n 1 lsusb -t
+
+# plug in your Waveshare 4G HAT via USB, make sure the GSM antenna is plugged in
+# after 5 seconds you should see one of the ports suddenly get a whole bunch of other sub-ports
+# the red light on the Waveshare 4G HAT should be on
+# a second red light should start blinking after about 15 seconds - this means it has established a web connection
+Ctrl+C to exit the viewing of USB ports
+
+# install the Minicom diagnostic tool - your new friend
+sudo apt-get install minicom
+
+# open up Minicom
+# NOTE: It is my assumption that your device will also be at /dev/ttyUSB2 - it may not be! 
+# if it's not there, you must edit the config at the top of phone.py, and use a different address below.
+sudo minicom -D /dev/ttyUSB2
+
+# type in your first AT command:
+AT
+# you should see "OK"
+# type in:
+ATE
+# you should see "OK", now everything you type will be echoed on the terminal so you can see it
+AT+COPS?
+# you should see your SIM card's mobile network name
+AT+CSQ
+# you should see "CSQ: x,y" where x is your current signal strength out of 30
+AT+CNMP=38
+# turns on LTE/4G as default web connection, not 2G
+ATD+your mobile phone number in international format, followed by semicolon e.g. ATD+27734567890;
+# should call your phone :)
+AT+CHUP
+# should hang up the call
+# well done! now your phone module is working! Let's get the internet working
+AT+CUSBPIDSWITCH=9001,1,1
+# should reply "OK"
+
+Ctrl+A, then X, then Yes to exit Minicom.
+
+# download the driver file from Waveshare
+wget https://www.waveshare.com/w/upload/0/00/SIM7600_NDIS.7z
+# install the 7 zip archiving software
+sudo apt-get install p7zip-full -y
+# now unzip the downloaded file to a new folder
+7z x SIM7600_NDIS.7z   -r -o./SIM7600_NDIS
+# open up the new folder
+cd SIM7600_NDIS
+# look at the contents
+ls
+# there should be 8 files there
+
+# install the kernel headers for Raspberry Pi
+sudo apt install raspberrypi-kernel-headers
+
+# compile the driver:
+# get sudo priviledges
+sudo su
+# make and clean up the directory
+make clean
+# make
+make
+# list items in the folder
+ls
+
+# remove the default Raspberry Pi qmi_wwan driver module
+rmmod qmi_wwan
+
+# install the driver
+insmod simcom_wwan.ko
+# list the operational driver modules, and see if "simcom_wwan" is listed in there?
+# it should be there, and qmi_wwan must not be there
+lsmod
+
+# open the wwan0 interface - should reply "wan0 up"
+sudo ifconfig wwan0 up
+
+# now go into Minicom and type the below AT command
+sudo minicom -D /dev/ttyUSB
+AT$QCRMCALL=1,1
+# exit Minicom
+
+# install the udhcpc client
+apt-get install udhcpc
+
+# open the connection and get an IP address
+udhcpc -i wwan0
+
+# now if you run the below, you should see the "wwan0" connection has "inet 100.119.160.62" or some other IP address assigned to it
+ifconfig -a
+
+# do a ping of a public URL
+ping -c3 www.linux.org
+
+# now the problem is that the default qmi_wwan module pops up again after reboot, and simcom_wwan is forgotten,
+# and those steps are annoying, so you need to create a startup file that runs the above commands right after reboot:
+# in your home directory, make a new file
+nano startup.sh
+# paste in the contents of startup.sh
+
+# then save and exit
+# make the new file executable
+chmod +x startup.sh
+
+# now if you run the file with the below command it removes the old driver, installs the new, and turns on the web
+# it might error out of qmi_wwan has already been removed and/or simcom_wwan has already been added - that's ok
+sudo ./startup.sh
+
+# to make this run automatically on startup, open up the cron editor
+sudo crontab -e
+# add this line at the bottom, change to your relevant directories, and note the log file for debugging (useful)
+# remember to replace "evan" with your Pi's username, in this command, and those later on below
+@reboot /home/evan/startup.sh >> /home/evan/startup-log.txt 2>&1
+# save and exit
+sudo reboot
+# internet should work, with wifi off, straight after startup, automatically!
+
+# Debugging the internet connection:
+# There are a lot of pieces to the puzzle that are required to make the web connection work. These will help you:
+# 1. Make sure there is sufficient power, if not, the Waveshare 4G HAT will keep on rebooting. If you see a yellow lightning bolt in the top right hand corner of your screen then you have insufficient power.
+# 2. Make sure the NET LED is flashing red on the Waveshare 4G HAT card.
+# 3. Check that the power is sustained and the USB connection is good but running "watch -n 1 lsusb -t" to watch the USB connected devices. The Waveshare 4G HAT device should be stable and not pop in and out.
+# 4. Check to see that the default wwan0 driver "qmi_wwan" is NOT there but "simcom_wwan" IS THERE, by running "lsmod".
+# 5. Check that the Waveshare 4G HAT is still operational by using Minicom and running some test AT commands.
+# 6. Run "ifconfig -a" to see if "wwan0" exists and whether it contains an IP address after "inet" - this means it has a web connection.
+# 7. If you are still stuck, try Waveshare's customer support. They responded usefully within 48 hours to several of my queries.
+# 8. Have a look at startup-log.txt which the startup script writes to at each boot time.
+# 9. Maybe extend the sleep times between steps in startup.sh.
+
+
+# --------- get camera working -----------------
+
+# edit the /boot/config.txt file and add in the line "camera_auto_detect=1" (exclude quotes)
+sudo nano /boot/config.txt
+# save and exit
+sudo reboot
+# on startup you should see the red LED on camera pulse briefly
+# take a test photo!
+libcamera-still -o test-image.jpg --qt-preview
+# once you get the phone app working you can take photos from there without using the cmd
+
+
+# --------- on screen touch keyboard working -----------------
+# install matchbox keyboard
+sudo apt-get install matchbox-keyboard
+# now you should see the keyboard under 'Accessories'
+# to make the keyboard more like a mobile phone keyboard, copy the 'mobile-keyboard.xml' into your home
+# directory /.matchbox/keyboard.xml
+
+
+
+# --------- get phone app working -----------------
+
+# if we want to be able to use the Pi's GPIO pins (for example as a switch to turn on/off the screen)
+# install the PIGPIO library
+sudo apt-get install pigpio
+# make the PIGPIO daemon start automatically on boot
+sudo systemctl enable pigpiod
+# install the PyQT5 database library - the phone app is written in PyQT5
+sudo apt-get install python3-pyqt5.qtsql
+
+# check if you can run the phone app from the cmd
+python3 phone.py
+# a GUI app showing the time should appear - this is the phone app
+# if the Waveshare 4G HAT is connected, the display should show your network name and signal strength after a few sec
+# if it doesn't work, maybe you need to install PyQt5 with "pip install PyQt5"
+
+# make sure the phone app runs automatically on boot
+# followed this: https://medium.com/@arslion/starting-python-gui-program-on-raspberry-pi-startup-56fb4e451cc1
+mkdir .config/autostart
+sudo nano autostart/MyApp.desktop
+# typed in the below
+[Desktop Entry]
+Name=Your Application Name
+Type=Application
+Comment=Some Comments about your program
+Exec=sudo /usr/bin/python3 /home/evan/phone.py
+# then save and exit
+# then make it executable
+sudo chmod +x .config/autostart/MyApp.desktop
+# after reboot the phone app should appear automatically on screen
+
+# make sure GPS works in Firefox
+# install Firefox
+sudo apt-get install firefox-esr
+# run the location-provider.py script manually for now
+python3 location-provider.py
+# you should see a URL, something like http://127.0.0.1:5000
+# open up Minicom
+sudo minicom -D /dev/ttyUSB2
+# turn on GPS
+AT+CGPS=1
+# wait a minute or so, go outside, and make sure the GPS antennae is connected
+AT+CGPSINFO
+# this should output a location string to the console
+# the phone.py app automatically fetches this string, and puts it into location.txt
+# this txt file is served at the live URL by location-provider.py, outputting a json string that the browser can use
+# open Firefox, type "about:config" as the URL
+# replace geo.provider.network.url with the URL above e.g. http://127.0.0.1:5000
+# if you open up http://127.0.0.1:5000 in the browser as a test (after successfully running phone.py with GPS on) you will see a json string of coords
+# now make the script run on boot
+sudo nano /etc/rc.local
+# add in the below line
+sudo python3 /home/evan/location-provider.py &
+# save and exit
+
+sudo reboot
+
+# to switch off the screen aka "lock phone", attach two jumper cables to GPIO pin 26 and ground
+# when you want to lock the phone, short these two with a switch
+# the phone.py app detects this and runs the two shell commands below to turn off screen and disable touchscreen:
+# xset dpms force off
+# xinput disable 6
+
+
+
+# you are done. you just built a damn smartphone.
+
+#################################################################
