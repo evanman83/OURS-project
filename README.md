@@ -58,7 +58,7 @@ Below are the complete hardware and software instructions to build your own OURp
 
 ## HOW TO BUILD
 
-Buy all the parts in parts-list.xls.
+Buy all the parts in *parts-list.xls*. Connect them based on *schematic.ppt*.
 
 You can snap together a working version quite quickly with just the following (no soldering required):
 - Raspberry Pi
@@ -76,7 +76,8 @@ Copy the files below into the Raspberry Pi home directory:
 - ringtone.wav (your phone's ringtone - replace as you wish!)
 - mobile-keyboard.xml (a custom keyboard based on the match keyboard software)
 
-Follow the instructions listed in setup_commands.txt to ready the Raspberry Pi, setup internet, and get the phone.py app working.
+Follow the instructions listed in *setup_commands.txt* to ready the Raspberry Pi, setup internet, and get the phone.py app working.
+
 
 ### Making the cables smaller
 There are many USB and audio plugs being used in the project. These are too big to allow packaging the phone's components into the wooden phone cover (box) designed for it. To make these smaller, I used thin wire to make new cables, with custom plugs on the ends. I made the plugs by using radically stripped down versions of the male plugs, taking off extra plastic housing, grinding off unnecessary bits and even bending some parts at right angles. Then I soldered on new leads and covered it with hot glue so that they are robust enough to force into tight spaces.
@@ -103,11 +104,13 @@ The GPS antenna is also too big. So I crushed it slowly in a clamp and used a sc
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_224147.jpg" width="400" /> 
 
+
 ### Laser cut the phone cover ###
 
-Email the file laser-cut-cover.dxf to your nearest laser cutting facility. Use 3mm MDF board - that is what the design has been made to use. You won't be able to use a thinner board without modifying the design.
+Email the file *laser-cut-cover.dxf* to your nearest laser cutting facility. Use 3mm MDF board - that is what the design has been made to use. You won't be able to use a thinner board without modifying the design.
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_173732.jpg" width="400" />
+
 
 ### Assembly and construction
 This is best described with pictures, but essentially:
