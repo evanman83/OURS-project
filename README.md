@@ -18,13 +18,14 @@ Below are the complete hardware and software instructions to build your own OURp
 - 1 GB RAM
 - 4 inch 480 x 800 colour touch screen
 - 5MP colour camera
-- GPS
+- GPS (in browser)
 - Wifi
 - Bluetooth audio
 - 1 watt onboard audio speaker
 - 3 USB ports
 - "Convergent": HDMI port to plug in external monitor, USB to plug in keyboard and mouse
 - Screen lock switch
+- 9cm x 16cm x 3cm
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1455.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1460.JPG" width="400" />
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1458.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1461.JPG" width="400" />
