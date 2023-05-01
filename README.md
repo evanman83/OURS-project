@@ -8,6 +8,8 @@ Below are the complete hardware and software instructions to build your own OURp
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1454.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1453.JPG" width="400" />
 
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111658.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111903.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112025.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112237.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114113.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114557.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_115055.jpg" height="180" />
+
 ## SPECS LIST
 
 - 4G LTE internet
@@ -34,6 +36,8 @@ Below are the complete hardware and software instructions to build your own OURp
 - Less soldering / destroying, more connecting / assembling
 - Share everything required to replicate
 - Modular, standardised parts
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230125_102156.jpg" width="400" />
 
 
 ## IMPROVEMENTS TO MAKE
@@ -78,6 +82,9 @@ There are many USB and audio plugs being used in the project. These are too big 
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123637.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123650.jpg" height="400" />
 
+To save even more space I soldered USB connections directly to the back side of the Raspberry Pi. This was the plug going to the 4G HAT.
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_225042.jpg" width="400" />
 
 
 ### Making the Waveshare 4G HAT smaller
@@ -95,6 +102,11 @@ The GPS antenna is also too big. So I crushed it slowly in a clamp and used a sc
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_224147.jpg" width="400" /> 
 
+### Laser cut the phone cover ###
+
+Email the file laser-cut-cover.dxf to your nearest laser cutting facility. Use 3mm MDF board - that is what the design has been made to use. You won't be able to use a thinner board without modifying the design.
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_173732.jpg" width="400" />
 
 ### Assembly and construction
 This is best described with pictures, but essentially:
@@ -107,3 +119,7 @@ This is best described with pictures, but essentially:
 7. Stick the speaker with putty over the top right-hand grill (9 holes).
 8. Place the GPS antenna next to the top left-hand grill (9 holes).
 9. Start glueing the case together, starting from the bottom upwards, finishing with the front cover.
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230217_234640.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230311_210201.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123553.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123617.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123708.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_130914.jpg" height="400" />
+
+See more construction photos in the /photos folder.
