@@ -1,4 +1,4 @@
-# OURS Project - DIY Smartphone
+# OURS Project - DIY Open-Source Linux Smartphone
 
 ## MISSION:
 
@@ -6,6 +6,7 @@ I wanted to give people more options and control over their most personal device
 
 Below are the complete hardware and software instructions to build your own OURphone. Please enjoy, upgrade, tinker, improve and evolve my original design as you see fit, and share your upgrades here. Find me on [LinkedIn](https://www.linkedin.com/in/boyofthefuture/) if you have any questions / ideas.
 
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1454.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1453.JPG" width="400" />
 
 ## SPECS LIST
 
@@ -22,6 +23,9 @@ Below are the complete hardware and software instructions to build your own OURp
 - 3 USB ports
 - "Convergent": HDMI port to plug in external monitor, USB to plug in keyboard and mouse
 - Screen lock switch
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1455.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1460.JPG" width="400" />
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1458.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1461.JPG" width="400" />
 
 
 ## GUIDING PRINCIPLES
@@ -44,7 +48,7 @@ Below are the complete hardware and software instructions to build your own OURp
 - Audio jack
 - Make less brick-like
 - Customise Raspbian so the UI is more usable by finger (perhaps flash another OS)
-- Indicate remaining battery life
+- Detect and display remaining battery life
 
 
 ## HOW TO BUILD
@@ -72,14 +76,25 @@ Follow the instructions listed in setup_commands.txt to ready the Raspberry Pi, 
 ### Making the cables smaller
 There are many USB and audio plugs being used in the project. These are too big to allow packaging the phone's components into the wooden phone cover (box) designed for it. To make these smaller, I used thin wire to make new cables, with custom plugs on the ends. I made the plugs by using radically stripped down versions of the male plugs, taking off extra plastic housing, grinding off unnecessary bits and even bending some parts at right angles. Then I soldered on new leads and covered it with hot glue so that they are robust enough to force into tight spaces.
 
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123637.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123650.jpg" height="400" />
+
+
+
 ### Making the Waveshare 4G HAT smaller
 This is a challenge because the 4G HAT sits in between the touch screen and the Raspberry Pi itself. It is a tight, tight squeeze. I used a combination of a Dremel tool (small rotary grinder) and miniature steel cutters to painstakingly cut off the large USB ports and the two thick metal pins. These proved useless for carrying USB data, so I couldn't use them anyway - only the micro USB port seemed to work (despite many messages to their Customer Support). Be EXTREMELY careful removing these big items because it is very easy to cause massive physical destruction by lifting a track off the PCB, and then your module (the most expensive part of the build) is dead and unusable :( Only attempt if you have a surgeon's hand.
 
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_224848.jpg" width="400" />
+
 Once these items are removed and the whole device is now slim, I hot glued the GSM and GPS antenna plugs and wires in place so they are not so fragile, and wrapped the whole thing in insulation tape.
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230218_202118.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123734.jpg" height="400" /> 
 
 The GSM antenna provided is too big. So I purchased a PCB GSM antenna and soldered that onto the cable instead. It works ok, but signal is never 100%, only good-ish.
 
 The GPS antenna is also too big. So I crushed it slowly in a clamp and used a screwdriver to prise off the plastic casing. This revealed a much smaller GSM antenna chip, like a hard metal square. I soldered this onto the cable instead and replaced the whole plug system with just one little neat cable.
+
+<img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_224147.jpg" width="400" /> 
+
 
 ### Assembly and construction
 This is best described with pictures, but essentially:
