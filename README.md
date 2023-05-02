@@ -129,3 +129,5 @@ This is best described with pictures, but essentially:
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230217_234640.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230311_210201.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123553.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123617.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123708.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_130914.jpg" height="400" />
 
 See more construction photos in the /photos folder.
+
+© Evan Robinson, 2023
