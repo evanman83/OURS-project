@@ -2,7 +2,7 @@
 
 ## MISSION:
 
-I wanted to give people more options and control over their most personal device, so I created an Open-source, Upgradable, Repairable Smartphone, that is also completely free of Big Tech. It's not theirs, it's O.U.R.S. 
+I wanted to give people more options and control over their most personal device, so I created an **O**pen-source, **U**pgradable, **R**epairable **S**martphone, that is also completely free of Big Tech. It's not theirs, it's O.U.R.S. 
 
 Below are the complete hardware and software instructions to build your own OURphone. Please enjoy, upgrade, tinker, improve and evolve my original design as you see fit, and share your upgrades here. Find me on [LinkedIn](https://www.linkedin.com/in/boyofthefuture/) if you have any questions / ideas.
 
@@ -16,6 +16,8 @@ Below are the complete hardware and software instructions to build your own OURp
 - Call, SMS, Contacts book
 - Quad Core 1.2GHz Broadcom BCM2837 64bit CPU
 - 1 GB RAM
+- Running Raspbian - a Debian Linux OS with installable app store
+- Capable of running Facebook, WhatsApp, YouTube etc in browser
 - 4 inch 480 x 800 colour touch screen
 - 5MP colour camera
 - GPS (in browser)
@@ -115,7 +117,7 @@ Email the file *laser-cut-cover.dxf* to your nearest laser cutting facility. Use
 ### Assembly and construction
 This is best described with pictures, but essentially:
 1. Make new male plugs for the micro USB and male 3.5mm TRRS / stereo plugs.
-2. Solder all the wires for the charger, power supply, power switch and screen lock switch, audio amp, volume control.
+2. Solder all the wires for the charger, power supply (set to 5.1V DC), power switch and screen lock switch, audio amp, volume control.
 3. Charge the batteries up for the first time, with the power switch in OFF / charging mode.
 4. Connect all the batteries, wires and plugs and test: internet, phone call, SMS, GPS, music playing.
 5. Insert the 4G HAT between the touchscreen and Raspberry Pi.
