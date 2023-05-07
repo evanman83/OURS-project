@@ -1,0 +1,30 @@
+Name									Price (ZAR)			
+Waveshare SIM7600G-H 4G HAT (B) for Raspberry Pi			R 1,414			
+Raspberry Pi 3 Model B							R 750			
+Waveshare 4 inch 480x800 HDMI IPS LCD touch screen display HAT	R 630			
+Lithium-ion battery 3.7V 3500mAh 18650				R 189			
+Lithium-ion battery 3.7V 3500mAh 18650				R 189			
+HKD Raspberry Pi camera mod 5MP					R 165			
+HKD DC/DC Buck Module 0.8-20V 2A converter				R 27			
+Slide switch SPDT (screen lock switch)				R 10			
+Slide switch DPDT (main power switch)					R 11			
+Micro USB Lithium 18650 battery charger 1A				R 15			
+HKD GSM antenna on IPEX 13 connector					R 19			
+Mini condensor microphone						R 27			
+0.86inch 1W 8Ohm speaker						R 17			
+HKD PAM8403 audio amplifier						R 20			
+Miniature 5V relay							R 16			
+10uF electrolytic capacitor						R 1			
+10K potentiometer							R 4			
+3.5mm audio plug 4 pole (male TRRS)					R 25			
+3.5mm audio plug 3 pole (male stereo)					R 25			
+Micro USB 5P plug in white housing R/A – rewireable			R 34			
+Micro USB 5P plug in white housing R/A – rewireable			R 34			
+Battery holder for 18650						R 8			
+Battery holder for 18650						R 8			
+				
+Total:									R 3,639	
+									198 USD	
+									180 EUR	
+									(27 April 2023 rates)
+
