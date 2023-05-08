@@ -13,7 +13,7 @@ Below are the complete hardware and software instructions to build your own OURp
 ## SPECS LIST
 
 - 4G LTE internet
-- Call, SMS, Contacts book
+- Call, SMS, Contacts book (contains a SIM7600 with sim card)
 - Quad Core 1.2GHz Broadcom BCM2837 64bit CPU
 - 1 GB RAM
 - Running Raspbian - a Debian Linux OS with installable app store
