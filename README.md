@@ -33,12 +33,17 @@ Below are the complete hardware and software instructions to build your own OURp
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1458.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1461.JPG" width="400" />
 
 
+## HOW IT WORKS
+The Raspberry Pi provides the basic functions of a computer, now made portable by the two 3.6v batteries, down-converted to 5.1V DC. Telephony (calls and SMS) is made possibly via the Waveshare 4G HAT with a normal mobile network SIM card contained therein. The Pi communicates with the 4G HAT via ordinary AT commands. The startup.sh script runs the configuration necessary to activate a 4G mobile internet connection. The phone.py app provides a UI for dialling and calling, sending, receiving and replying to SMS, adding and removing records from a simple Address Book. The built-in microphone and speaker allow normal voice calls.
+
+
 ## GUIDING PRINCIPLES
 
 - Low cost, off-the-shelf electronic components
 - Less soldering / destroying, more connecting / assembling
 - Share everything required to replicate
 - Modular, standardised parts
+- Browser-based PWAs are the future of installable apps
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230125_102156.jpg" width="400" />
 
@@ -70,6 +75,7 @@ You can snap together a working version quite quickly with just the following (n
 - Raspberry Pi camera (optional)
 - Headphones with built-in mic
 - Some USB cables
+- Operational mobile phone SIM card with airtime and data
 
 Copy the files below into the Raspberry Pi home directory:
 - startup.sh (auto-start script to turn on internet)
