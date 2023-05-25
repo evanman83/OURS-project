@@ -28,6 +28,7 @@ Below are the complete hardware and software instructions to build your own OURp
 - "Convergent": HDMI port to plug in external monitor, USB to plug in keyboard and mouse
 - Screen lock switch
 - 9cm x 16cm x 3cm
+- 5 hours battery life
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1455.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1460.JPG" width="400" />
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1458.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1461.JPG" width="400" />
@@ -50,7 +51,7 @@ The Raspberry Pi provides the basic functions of a computer, now made portable b
 
 ## IMPROVEMENTS TO MAKE
 
-- Use a faster Raspberry Pi with more RAM
+- Use a faster Raspberry Pi with more RAM, or another SBC, or the super small RPi 4 Compute Module
 - Use a capacitative touch screen, not resistive touch
 - A bigger screen would be nice
 - Eliminate audio whining / cracking (I think this is an RPi 3 problem, or audio amp needs isolation)
@@ -61,6 +62,7 @@ The Raspberry Pi provides the basic functions of a computer, now made portable b
 - Make less brick-like
 - Customise Raspbian so the UI is more usable by finger (perhaps flash another OS)
 - Detect and display remaining battery life
+- Extend battery life, perhaps convert DC voltage UP instead of DOWN, or down-clock the RPi CPU temporarily
 
 
 ## HOW TO BUILD
@@ -121,19 +123,22 @@ Email the file *laser-cut-cover.dxf* to your nearest laser cutting facility. Use
 
 
 ### Assembly and construction
-This is best described with pictures, but essentially:
-1. Make new male plugs for the micro USB and male 3.5mm TRRS / stereo plugs.
-2. Solder all the wires for the charger, power supply (set to 5.1V DC), power switch and screen lock switch, audio amp, volume control.
-3. Charge the batteries up for the first time, with the power switch in OFF / charging mode.
-4. Connect all the batteries, wires and plugs and test: internet, phone call, SMS, GPS, music playing.
-5. Insert the 4G HAT between the touchscreen and Raspberry Pi.
-6. Fold the camera ribbon cable over the 4G HAT and over and under the batteries - stick in place with Prestick putty.
-7. Stick the speaker with putty over the top right-hand grill (9 holes).
-8. Place the GPS antenna next to the top left-hand grill (9 holes).
-9. Start glueing the case together, starting from the bottom upwards, finishing with the front cover.
+This is best described with pictures, but the main steps are:
+
+1. Make new male plugs for the micro USB and male 3.5mm TRRS / stereo plugs (as described above).
+2. Solder all the wires for the charger, power switch and power supply. Set the DC/DC converter to 5.1 VDC. Charge the batteries up for the first time, with the power switch in OFF / charging mode. Test whether the system can boot up and connect to the web - outbound calls and internet use a lot of current / make current spikes.
+3. Solder in the audio amp, speaker and volume knob. Play a test mp3 (I downloaded the RhythymBox app) and see how loud it plays over the speaker.
+4. Solder in the relay and screen lock switch. When the phone app is running, switching the screen lock switch should turn off the LCD screen and disable the touch controls. When a phone call begins, the relay should switch off the default Raspberry Pi audio and instead connect the phone call audio to the loudspeaker.
+5. Connect all the batteries, wires and plugs and test: Internet, phone call, SMS, GPS, music playing. There is a lot of guidance for troubleshooting in the file setup_commands.txt (provided above).
+6. Insert the 4G HAT between the touchscreen and Raspberry Pi, with audio and power cables pointing out the bottom right hand corner of the screen (facing the screen).
+7. Fold the camera ribbon cable under the 4G HAT and over and under the batteries - stick the camera in place with Prestick putty. (this system was annoying because every time I needed to remove the electronics from the cover I had to unwrap the camera - rather implement some kind of snap plug for the ribbon cable to make this easier)
+8. Stick the speaker with putty over the top right-hand grill (9 holes).
+9. Place the GPS antenna next to the top left-hand grill (9 holes). GSM antenna can go down the left-hand side of the cover.
+10. Start glueing the case together, starting from the bottom upwards, finishing with the front cover.
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230217_234640.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230311_210201.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123553.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123617.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_123708.jpg" height="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230429_130914.jpg" height="400" />
 
 See more construction photos in the /photos folder.
+
 
 © Evan Robinson, 2023
