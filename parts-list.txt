@@ -8,7 +8,7 @@ HKD Raspberry Pi camera mod 5MP					R 165
 HKD DC/DC Buck Module 0.8-20V 2A converter				R 27			
 Slide switch SPDT (screen lock switch)				R 10			
 Slide switch DPDT (main power switch)					R 11			
-Micro USB Lithium 18650 battery charger 1A				R 15			
+Micro USB Lithium 18650 battery charger 1A (TP4056 chip)		R 15			
 HKD GSM antenna on IPEX 13 connector					R 19			
 Mini condensor microphone						R 27			
 0.86inch 1W 8Ohm speaker						R 17			
