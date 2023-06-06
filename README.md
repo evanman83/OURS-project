@@ -119,6 +119,8 @@ The GPS antenna is also too big. So I crushed it slowly in a clamp and used a sc
 
 Email the file *laser-cut-cover.dxf* to your nearest laser cutting facility. Use 3mm MDF board - that is what the design has been made to use. You won't be able to use a thinner board without modifying the design.
 
+You can also 3D print all the parts, here's the link : https://www.thingiverse.com/thing:6063147
+
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230215_173732.jpg" width="400" />
 
 
