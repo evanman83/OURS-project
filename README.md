@@ -6,6 +6,8 @@ I wanted to give people more options and control over their most personal device
 
 Below are the complete hardware and software instructions to build your own OURphone. Please enjoy, upgrade, tinker, improve and evolve my original design as you see fit, and share your upgrades here. Find me on [LinkedIn](https://www.linkedin.com/in/boyofthefuture/) if you have any questions / ideas.
 
+Want to work together on version 2? Join us on our [Telegram group](https://t.me/ourphonechat).
+
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1454.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1453.JPG" width="400" />
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111658.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111903.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112025.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112237.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114113.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114557.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_115055.jpg" height="180" />
