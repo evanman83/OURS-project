@@ -8,6 +8,8 @@ Below are the complete hardware and software instructions to build your own OURp
 
 Want to work together on version 2? Join us on our [Telegram group](https://t.me/ourphonechat).
 
+We are raising funds for version 2! Please support our campaign at [BuyMeACoffee](https://buymeacoffee.com/ourphone).
+
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1454.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1453.JPG" width="400" />
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111658.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_111903.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112025.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_112237.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114113.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_114557.jpg" height="180" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_20230501_115055.jpg" height="180" />
