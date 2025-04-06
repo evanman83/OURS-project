@@ -29,3 +29,10 @@ Current Telegram group members: 103
 Crowd-funding raised so far: $400
 We have raised enough to hire a professional PCB designer on UpWork to design v1 of our new PCB. He is busy. 
 We are working on the outstanding issues listed in our wiki document (find link in Telegram group).
+
+Update 6 Apr 2025:
+Current Telegram group members: 127
+Crowd-funding raised so far: $1,100
+After much debate we took the SIM7600 modem chip off the PCB board so that it becomes more modular and the PCB is cheaper to produce and iterate on. The SIM7600 will now plug in via an M2 connector.
+I will start uploading the EasyEDA files into the V2 folder as they become available.
+Next step is to order a PCB and test it.
