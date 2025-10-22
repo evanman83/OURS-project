@@ -36,3 +36,10 @@ Crowd-funding raised so far: $1,100
 After much debate we took the SIM7600 modem chip off the PCB board so that it becomes more modular and the PCB is cheaper to produce and iterate on. The SIM7600 will now plug in via an M2 connector.
 I will start uploading the EasyEDA files into the V2 folder as they become available.
 Next step is to order a PCB and test it.
+
+Update 22 Oct 2025:
+Current Telegram group members: 150
+Crowd-funding raised so far: $1,910
+After trying to order the PCB we discovered that a 3 layer PCB with filled vias cost an extra ~$300 to manufacture. This requirement was due to the power management chip we were using which was in a BGA form factor. We switched PCB designers, chose a different chip and simplified the design so that it now costs $66 to manufacture and assemble incl components.
+The board has been manufactured and is being couriered now for testing.
+
