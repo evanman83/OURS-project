@@ -6,9 +6,13 @@ I wanted to give people more options and control over their most personal device
 
 Below are the complete hardware and software instructions to build your own OURphone. Please enjoy, upgrade, tinker, improve and evolve my original design as you see fit, and share your upgrades here. Find me on [LinkedIn](https://www.linkedin.com/in/boyofthefuture/) if you have any questions / ideas.
 
-Want to work together on version 2? Join us on our [Telegram group](https://t.me/ourphonechat).
+**Version 1 was completed in 2024 - instructions are below. We are now busy with version 2**
 
-We are raising funds for version 2! Please support our campaign at [BuyMeACoffee](https://buymeacoffee.com/ourphone).
+**Join us on our [Telegram group](https://t.me/ourphonechat).**
+
+**We are raising funds for version 2! Please support our campaign at [BuyMeACoffee](https://buymeacoffee.com/ourphone).**
+
+## VERSION 1 PLANS
 
 <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1454.JPG" width="400" /> <img src="https://github.com/evanman83/OURS-project/blob/main/photos/IMG_1453.JPG" width="400" />
 
